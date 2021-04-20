@@ -1,5 +1,7 @@
 package javatesting;
 
+import java.util.Scanner;
+
 public class NumMultiplo extends NumPariDispari{
 
     public void controllaMultiplo() {
@@ -12,12 +14,12 @@ public class NumMultiplo extends NumPariDispari{
     }
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         NumMultiplo num = new NumMultiplo();
 
         System.out.println("Inserisci N:");
-        num.setN(77);                       //Input di N
-
-        System.out.println(num.getN());     //Stampa il valore di N
+        num.n = input.nextInt();        //Input del valore di N
+        System.out.println(num.n);      //Stampa il valore di N
 
         for (num.i=1; num.i < num.n+1; num.i++) {
             System.out.print(num.i + " ");

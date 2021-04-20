@@ -1,17 +1,12 @@
 package javatesting;
 
+import java.util.Scanner;
+
 public class NumPariDispari {
 
     protected int n;
     protected int i = 0;
 
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    public int getN() {
-        return n;
-    }
 
     //Controlla se I è pari o dispari
     public void controllaN() {
@@ -22,11 +17,12 @@ public class NumPariDispari {
 
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         NumPariDispari num = new NumPariDispari();  //Creazione dell'istanza NumPariDispari
 
         System.out.println("Inserisci N:");
-        num.setN(77);                       //Input di N
-        System.out.println(num.getN());     //Stampa il valore di N
+        num.n = input.nextInt();        //Input del valore di N
+        System.out.println(num.n);      //Stampa il valore di N
 
         System.out.println("Risultato:");
 
