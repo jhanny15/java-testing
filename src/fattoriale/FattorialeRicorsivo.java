@@ -1,4 +1,4 @@
-package Fattoriale;
+package fattoriale;
 
 public class FattorialeRicorsivo {
 

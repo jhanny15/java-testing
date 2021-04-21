@@ -1,4 +1,4 @@
-package Fattoriale;
+package fattoriale;
 
 public class FattorialeIterativo {
 
@@ -14,10 +14,10 @@ public class FattorialeIterativo {
             return 1;
         }
         else {
-            for(int i=1; i < m; i++) {
-                n = n*(n-i);
+            for(int i=1; i < n; i++) {
+                m = m*i;
             }
-            return n;
+            return m;
         }
     }
 
