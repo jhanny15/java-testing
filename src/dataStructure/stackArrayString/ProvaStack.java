@@ -11,6 +11,7 @@ public class ProvaStack {
             System.out.println(stack.peek());
         }
 
+
         for(int i = 0; i < 5;i++) {
             System.out.println(stack.peek());
             stack.pop();
