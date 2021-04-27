@@ -2,26 +2,10 @@ package geometry.polygons.base;
 
 public class Triangle extends Polygon {
 
-    private double sideA = 1.0;
-    private double sideB = 1.0;
-    private double sideC = 1.0;
-
     /**
-     * Costruttore del Triangolo con i lati prefissati
+     * Costruttore del Triangolo
      */
     public Triangle() {
-    }
-
-    /**
-     * Costruttore del Triangolo con i lati specificati
-     * @param sideA
-     * @param sideB
-     * @param sideC
-     */
-    public Triangle(double sideA, double sideB, double sideC) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
     }
 
     /**
@@ -30,7 +14,14 @@ public class Triangle extends Polygon {
      */
     @Override
     public double area() {
-        if(isTriangle()) return (sideA + sideB + sideC) / 2;
+        if(isTriangle()) {
+            double area = 0.0;
+
+            for (double side : sides) {
+                area += side;
+            }
+            return (area/2);
+        }
         else return 0;
     }
 
@@ -40,11 +31,25 @@ public class Triangle extends Polygon {
      */
     @Override
     public double perimeter() {
-        if(isTriangle()) return (sideA+sideB+sideC);
+        if(isTriangle()){
+            double perimeter = 0.0;
+
+            for (double side : sides) {
+                perimeter += side;
+            }
+            return perimeter;
+        }
         else return 0;
+
     }
 
+    /**
+     * Metodo che verifica se il triangolo è valido
+     * @return true se è valido
+     */
     public boolean isTriangle() {
-        return ((sideA + sideB > sideC)&&(sideA + sideC > sideB)&&(sideB + sideC > sideA));
+        return ((sides[0] + sides[1] > sides[2])&&
+                (sides[0] + sides[2] > sides[1])&&
+                (sides[1] + sides[2] > sides[0]));
     }
 }

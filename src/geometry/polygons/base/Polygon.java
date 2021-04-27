@@ -2,7 +2,7 @@ package geometry.polygons.base;
 
 public class Polygon {
     private int numSides = 3;
-    private double[] sides;
+    protected double[] sides;
 
     /**
      * Costruttore di Poligono che crea di base un triangolo
@@ -20,13 +20,34 @@ public class Polygon {
         this.sides = new double[numSides];
     }
 
+    /**
+     * Metodo per inserire i valori dei lati
+     * @param a latoA
+     * @param b latoB
+     * @param c latoC
+     */
+    public void setValues(double a, double b, double c) {
+        sides[0] = a;
+        sides[1] = b;
+        sides[2] = c;
+    }
 
     public double area(){
-        return 0;
+        double area = 0.0;
+
+        for(int i = 0; i < sides.length; i++) {
+          area += sides[i];
+        }
+        return (area/2);
     }
 
     public double perimeter(){
-        return 0;
+         double perimeter = 0.0;
+
+         for(int i = 0; i < sides.length; i++) {
+             perimeter += sides[i];
+         }
+         return perimeter;
     }
 
 }

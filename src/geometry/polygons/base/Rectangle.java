@@ -2,23 +2,24 @@ package geometry.polygons.base;
 
 public class Rectangle extends Polygon{
 
-    private double sideA = 1.0;
-    private double sideB = 1.0;
 
     /**
-     * Costruttore del Rettangolo con i lati prefissati
+     * Costruttore del Rettangolo
      */
     public Rectangle() {
+        super(4);
     }
 
     /**
-     * Costruttore del Rettangolo con i lati specificati
-     * @param sideA base
-     * @param sideB altezza
+     * Metodo per inserire i valori dei lati
+     * @param a base
+     * @param b altezza
      */
-    public Rectangle(double sideA, double sideB) {
-        this.sideA = sideA;
-        this.sideB = sideB;
+    public void setValues(double a, double b) {
+        sides[0] = a;
+        sides[1] = b;
+        sides[2] = a;
+        sides[2] = b;
     }
 
     /**
@@ -27,7 +28,7 @@ public class Rectangle extends Polygon{
      */
     @Override
     public double area() {
-        return (sideA * sideB);
+        return (sides[0] * sides[1]);
     }
 
     /**
@@ -36,7 +37,7 @@ public class Rectangle extends Polygon{
      */
     @Override
     public double perimeter() {
-        return (2 * (sideA + sideB));
+        return (2 * (sides[0] + sides[1]));
     }
 
     /**
@@ -44,6 +45,6 @@ public class Rectangle extends Polygon{
      * @return diagonale
      */
     public double diagonal() {
-        return (Math.sqrt(sideA * sideA + sideB * sideB));
+        return (Math.sqrt(sides[0] * sides[2] + sides[1] * sides[3]));
     }
 }

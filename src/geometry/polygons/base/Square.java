@@ -3,17 +3,19 @@ package geometry.polygons.base;
 public class Square extends Rectangle{
 
     /**
-     * Costruttore con i lati prefissati dalla classe Rectangle
+     * Costruttore con i lati specificati
      */
     public Square() {
     }
 
     /**
-     * Costruttore con i lati specificati
-     * @param sideA lato a e b
+     * Metodo per inserire i valori dei lati
+     * @param a lato
      */
-    public Square(double sideA) {
-        super(sideA, sideA);
+    public void setValues(double a) {
+        for(int i = 0; i < sides.length; i++) {
+            sides[i] = a;
+        }
     }
 
 }
