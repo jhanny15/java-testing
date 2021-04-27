@@ -3,19 +3,22 @@ package numIntero;
 public class Intero {
 
     //Il numero intero
-    private int num;
+    private int n;
+
+    //Costruttore privato
+    private Intero(){};
 
     //Costruttore della Classe
     public Intero(int num){
-        this.num = num;
+        this.n = num;
     }
 
     public int getNum() {
-        return num;
+        return n;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNum(int n) {
+        this.n = n;
     }
 
     /**
@@ -27,14 +30,14 @@ public class Intero {
      * somma per il numero di Fibonacci
      */
     public int getFibonacci() {
-        if(num==0) return 0;
-        if(num==1) return 1;
+        if(n==0) return 0;
+        if(n==1) return 1;
 
         int a = 0;
         int b = 1;
         int somma = a + b;
 
-        for(int i=1; i<num; i++){
+        for(int i=1; i<n; i++){
             somma = a + b;
             a = b;
             b = somma;
@@ -48,12 +51,12 @@ public class Intero {
      * @return m: Ritorna il fattoriale di num
      */
     public int getFattoriale(){
-        int m = num;
-        if(num==0) {
+        int m = n;
+        if(n==0) {
             return 1;
         }
         else {
-            for(int i=1; i < num; i++) {
+            for(int i=1; i < n; i++) {
                 m = m*i;
             }
             return m;
@@ -64,27 +67,32 @@ public class Intero {
      * Metodo per controllare se num è pari o dispari
      * @return un boolean (true = pari, false = dispari)
      */
-    public boolean getPariDispari() {
-        return (num%2==0);
+    public boolean isPari() {
+        return (n % 2 == 0);
     }
 
-    public int getMultiplo() {
-        int multiplo;
-        if(num%2==0) {
-            multiplo = 2;
-        }
-        else if(num%3==0) {
-            multiplo = 3;
-        }
-        else if(num%5==0) {
-        multiplo = 3;
-        }
-        else if(num%7==0) {
-            multiplo = 3;
-        }
-        else multiplo = 0;
-
-        return multiplo;
+    /**
+     *
+     * @param m Numero
+     * @return un boolean
+     */
+    public boolean isMultiplo(int m) {
+        if(m>n) return false;
+        return ( n % m == 0 );
     }
 
+    public static void main(String[] args) {
+
+        Intero num = new Intero (10);
+        System.out.println("Il numero è: " + num.getNum() );
+        System.out.println("Il numero di Fibonacci alla " + num.getNum() + "a posizione è: " + num.getFibonacci());
+        System.out.println("Il numero fattoriale è: " + num.getFattoriale());
+
+        if(num.isPari()){
+            System.out.println("Il numero è pari");
+        } else System.out.println("Il numero è dispari");
+
+
+
+    }
 }
