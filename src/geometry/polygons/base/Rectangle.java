@@ -2,7 +2,6 @@ package geometry.polygons.base;
 
 public class Rectangle extends Polygon{
 
-
     /**
      * Costruttore del Rettangolo
      */
@@ -16,10 +15,10 @@ public class Rectangle extends Polygon{
      * @param b altezza
      */
     public void setValues(double a, double b) {
-        sides[0] = a;
-        sides[1] = b;
-        sides[2] = a;
-        sides[2] = b;
+        for(int i = 0; i < (sides.length-2); i++) {
+            sides[i] = a;
+            sides[++i] = b;
+        }
     }
 
     /**

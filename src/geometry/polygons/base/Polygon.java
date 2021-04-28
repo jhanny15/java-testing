@@ -5,7 +5,7 @@ public class Polygon {
     protected double[] sides;
 
     /**
-     * Costruttore di Poligono che crea di base un triangolo
+     * Costruttore di Poligono che crea di default un triangolo
      */
     public Polygon() {
         this.sides = new double[numSides];
@@ -32,6 +32,10 @@ public class Polygon {
         sides[2] = c;
     }
 
+    /**
+     * Calcola l'area del Poligono
+     * @return area
+     */
     public double area(){
         double area = 0.0;
 
@@ -41,6 +45,10 @@ public class Polygon {
         return (area/2);
     }
 
+    /**
+     * Calcola il perimetro del Poligono
+     * @return perimetro
+     */
     public double perimeter(){
          double perimeter = 0.0;
 
