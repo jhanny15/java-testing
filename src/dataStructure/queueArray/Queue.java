@@ -48,10 +48,10 @@ public class Queue {
      */
     public int remove() {
         if(!isEmpty()) {
-            int temp = arr[head];
+            int val = arr[head];
             arr[head] = 0;
             head++;
-            return temp;
+            return val;
         }
         else return -1;
 
