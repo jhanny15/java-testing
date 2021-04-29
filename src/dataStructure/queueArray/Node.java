@@ -18,4 +18,12 @@ public class Node {
         this.data = data;
         this.pointer = pointer;
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public Node getPointer() {
+        return pointer;
+    }
 }

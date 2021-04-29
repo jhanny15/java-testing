@@ -2,7 +2,7 @@ package dataStructure.stackArrayString;
 
 public class Stack {
 
-    private int head = 0;
+    private int head = -1;
     private int size = 0;
     private int[] arr;
     private static final int MAX_LENGTH = 32;
@@ -20,13 +20,12 @@ public class Stack {
      * @param size lunghezza dello stack
      */
     public Stack(int size) {
-        this.head = -1;
         this.size = size;
         this.arr = new int[size];
     }
 
     /**
-     * Metodo per inserire gli elementi dentro l'array
+     * Metodo per inserire un elemento dentro l'array
      * se lo stack è pieno, crea un nuovo array con doppio la lunghezza originale
      * Il ciclo for serve per copiare gli elementi originali dentro il nuovo array
      * @param data elemento da inserire
@@ -40,7 +39,6 @@ public class Stack {
                 temp[i] = arr[i];
             }
             arr = temp;
-            size = arr.length;
         }
 
         arr[++head] = data ;
@@ -63,10 +61,13 @@ public class Stack {
 
     /**
      * Metodo che ritorna il primo elemento dello stack
-     * @return un int
+     * @return un int, return -1 se è vuoto
      */
     public int peek() {
-        return arr[head];
+        if(!isEmpty()) {
+            return arr[head];
+        }
+        else return -1;
     }
 
     /**
@@ -74,7 +75,7 @@ public class Stack {
      * @return true se è pieno
      */
     public boolean isFull() {
-        return (size-1 == head);
+        return (arr.length-1 == head);
     }
 
     /**
