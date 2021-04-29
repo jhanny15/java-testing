@@ -16,12 +16,10 @@ public class Queue {
      */
     public void enqueue(String data) {
         if(isEmpty()) {
-            this.head = new Node(data, this.head);
+            this.head = new Node(data, this.tail);
+            this.tail = this.head;
         }
-        else {
-
-            this.tail = new Node(data, this.head);
-        }
+        else this.tail = new Node(data, this.tail);
     }
 
     /**
